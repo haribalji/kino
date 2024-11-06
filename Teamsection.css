@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: 'Raleway', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.team-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.7s ease, box-shadow 0.5s ease;
+    width: 337px;
+    height: 512px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.img-container {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative; /* Added position relative */
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.hover-img {
+    position: absolute; /* Position hover image absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+.img-container:hover .initial-img {
+    opacity: 0; /* Hide initial image on hover */
+}
+
+.img-container:hover .hover-img {
+    opacity: 1; /* Show hover image on hover */
+}
+
+.memberdetails {
+    position: relative;
+    padding: 0 20px;
+    flex-grow: 1;
+    padding-top: 30px;
+}
+
+.memberdetails .name {
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+    color: #049dea;
+}
+
+.memberdetails .role {
+    font-size: 16px;
+    color: gray;
+    text-align: left;
+    padding-left: 10px;
+}
+
+/* Neon Button Styles */
+
+.neon-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #049dea;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 2px;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.037);
+}
+
+.neon-button svg {
+    width: 24px;  /* Icon size */
+    height: 24px;  /* Icon size */
+    margin-right: 8px;  /* Space between icon and text */
+    fill: currentColor;  /* Fill color matches text color */
+}
+
+.neon-button:hover {
+    color: #000;
+    background: #049dea;
+    box-shadow: 0 0 5px #049dea,
+                0 0 25px #049dea,
+                0 0 50px #049dea,
+                0 0 200px #049dea;
+}
+
+.neon-button span {
+    position: absolute;
+    display: block;
+}
+
+/* Animate lines with slower speed (2s) */
+@keyframes animate1 {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+@keyframes animate2 {
+    0% { top: -100%; }
+    50%, 100% { top: 100%; }
+}
+
+@keyframes animate3 {
+    0% { right: -100%; }
+    50%, 100% { right: 100%; }
+}
+
+@keyframes animate4 {
+    0% { bottom: -100%; }
+    50%, 100% { bottom: 100%; }
+}
+
+.neon-button span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #049dea);
+    animation: animate1 2s linear infinite; /* Slow animation */
+}
+
+.neon-button:hover span:nth-child(1) {
+    background: linear-gradient(90deg, transparent, #049dea);
+}
+
+.neon-button span:nth-child(2) 
+{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #049dea);
+    animation: animate2 2s linear infinite; /* Slow animation */
+    animation-delay: 0.25s;
+}
+
+.neon-button:hover span:nth-child(2) {
+    background: linear-gradient(180deg, transparent, #049dea);
+}
+
+.neon-button span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #049dea);
+    animation: animate3 2s linear infinite; /* Slow animation */
+    animation-delay: 0.50s;
+}
+
+.neon-button:hover span:nth-child(3) 
+{
+    background: linear-gradient(270deg, transparent, #049dea);
+}
+
+.neon-button span:nth-child(4) 
+{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #049dea);
+    animation: animate4 2s linear infinite; /* Slow animation */
+    animation-delay: 0.75s;
+}
+
+.neon-button:hover span:nth-child(4) 
+{
+    background: linear-gradient(360deg, transparent, #049dea);
+}
+/* Responsiveness */
+
+/* For large tablets (like iPad Pro) */
+@media (max-width: 1024px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 30px;
+    }
+  
+    .team-section h1 {
+        font-size: 2em;
+    }
+  }
+  
+  /* For tablets (smaller screens) */
+  @media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr; /* 1 column */
+        gap: 20px;
+    }
+  
+    .team-member {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+  
+    .team-section h1 {
+        font-size: 1.8em;
+    }
+    
+    .memberdetails .name {
+        font-size: 1.2em;
+    }
+  
+    .memberdetails .role {
+        font-size: 0.8em;
+    }
+  
+    .neon-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+  }
+  
+  /* For smaller mobile devices */
+  @media (max-width: 480px) {
+    .team-section h1 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+  
+    .memberdetails .name {
+        font-size: 1em;
+    }
+  
+    .memberdetails .role {
+        font-size: 0.8em;
+    }
+  
+    .neon-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+  }
+  

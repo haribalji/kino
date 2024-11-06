@@ -1,0 +1,266 @@
+/* General Reset */
+.contactbody, .contactbody:before, .contactbody:after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.contactbody {
+    background: linear-gradient(to right, #c3c3c3 0%, #cecae8 100%);
+    font-size: 12px;
+    
+}
+
+.contactbody, #contactbutton,  #contactname,#contactemail,#contactcontactNo,#contactmessage {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.contactbackground {
+    display: flex;
+    min-height: 100vh;
+}
+
+.contactcontainer {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+}
+
+.contactscreen {
+    position: relative;
+    background: white;
+    border-radius: 15px;
+}
+
+.contactscreen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+}
+
+/* Header Styles */
+.contactscreen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #002366;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.contactscreen-header-left {
+    margin-right: auto;
+}
+
+/* Button and Icon Styling */
+.contactscreen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: white;
+}
+
+.contactscreen-header-button.close {
+    background: #049dea;
+}
+
+.contactscreen-header-button.maximize {
+    background: #e8e925;
+}
+
+.contactscreen-header-button.minimize {
+    background: #74c54f;
+}
+
+/* Screen Body and Form Layout */
+.contactscreen-body {
+    display: flex;
+}
+
+.contactscreen-body-item {
+    flex: 1;
+    padding: 50px;
+}
+
+.contactscreen-body-item.left {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title and Contact Styles */
+.contactapp-title {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: #002366;
+    font-size: 26px;
+}
+
+.contactapp-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 25px;
+    height: 4px;
+    background: #002366;
+    animation: underline 1.5s ease-in-out infinite;
+}
+
+@keyframes underline {
+    0%, 100% { width: 25px; }
+    50% { width: 60px; }
+}
+
+.contactapp-contact {
+    margin-top: auto;
+    font-size: 14px;
+    color: #002366;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    background: #f4f4f8;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* Form Control and Button Styling */
+.contactapp-form-group {
+    margin-bottom: 15px;
+}
+
+.contactapp-form-group.message {
+    margin-top: 40px;
+}
+
+.contactapp-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.contactapp-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #002366;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+}
+
+.contactapp-form-control::placeholder {
+    color: #002366;
+}
+
+.contactapp-form-control:focus {
+    border-bottom-color: #002366;
+}
+
+.contactapp-form-button {
+    background: none;
+    border: none;
+    color: #002366;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.contactapp-form-button:hover {
+    color: #b9134f;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 520px) {
+    .contactscreen-body {
+        flex-direction: column;
+    }
+
+    .contactscreen-body-item.left {
+        margin-bottom: 30px;
+    }
+
+    .contactapp-title {
+        flex-direction: row;
+    }
+
+    .contactapp-title span {
+        margin-right: 12px;
+    }
+
+    .contactapp-title:after {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contactscreen-body {
+        padding: 40px;
+    }
+
+    .contactscreen-body-item {
+        padding: 0;
+    }
+}
+
+/* Style for the message textarea */
+.contactapp-form-group.contactmessage #contactmessage.contactapp-form-control {
+    resize: vertical;
+    height: 80px;
+}
+
+/* Success Indicator Styles */
+.contactsuccess-indicator {
+    display: inline-block;
+    background-color: #4caf50; /* Dark green background */
+    color: white;
+    padding: 10px 20px; /* Padding for a smaller, rectangular look */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 16px; /* Font size for a compact look */
+    font-weight: bold;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start position below */
+    animation: slideIn 0.5s forwards, pulseGlow 1.5s infinite alternate; /* Entry and pulsing animations */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Subtle pulsing glow */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 4px rgba(76, 175, 80, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(76, 175, 80, 0.8);
+    }
+}
